@@ -1,6 +1,7 @@
 # DaJuLang
 
-파이썬처럼 쉽고 C처럼 빠른 프로그래밍 언어.
+DaJuLang 은 간결한 문법과 네이티브 수준의 실행 성능을 목표로 하는 프로그래밍
+언어이다. 본 저장소는 베타 배포본과 문서를 제공한다.
 
 ```
 func 인사(이름) {
@@ -9,32 +10,34 @@ func 인사(이름) {
 print(인사("세계"))
 ```
 
-## 다운로드
+## 1. 다운로드
 
-[Releases](https://github.com/lenftk/dajulang-lang/releases) 에서 OS에 맞는 파일을 받는다.
+[Releases](https://github.com/lenftk/dajulang-lang/releases) 에서 운영체제에
+맞는 배포본을 받는다.
 
-| OS | 파일 |
-|----|------|
+| 운영체제 | 파일 |
+|----------|------|
 | Windows x64 | `dajulang-windows-x64.zip` |
 | Linux x64 | `dajulang-linux-x64.tar.gz` (준비 중) |
 | macOS (Apple Silicon) | `dajulang-macos-arm64.tar.gz` (준비 중) |
 | macOS (Intel) | `dajulang-macos-x64.tar.gz` (준비 중) |
 
-## 설치
+## 2. 설치
 
-Windows: 압축을 풀고 `install.ps1` 을 실행하면 `djl` 명령이 PATH에 등록된다.
+Windows 에서는 압축을 해제한 뒤 `install.ps1` 을 실행한다. 실행 파일이
+사용자 PATH 에 등록되어 어느 위치에서나 `djl` 명령을 사용할 수 있다.
 
 ```
 powershell -ExecutionPolicy Bypass -File install.ps1
 ```
 
-설치 없이 압축 안의 `djl.exe` 로 바로 실행해도 된다.
+설치 없이 압축 내부의 `djl.exe` 로 직접 실행할 수도 있다.
 
 ```
 djl 프로그램.ju
 ```
 
-## 예제
+## 3. 예제
 
 ```
 // hello.ju
@@ -54,23 +57,22 @@ print(팩토리얼(5))               // 120
 djl hello.ju
 ```
 
-전체 문법은 [SYNTAX.md](SYNTAX.md) 참고.
+전체 문법은 [SYNTAX.md](SYNTAX.md) 에 기술한다.
 
-## 패키지 매니저
+## 4. 패키지 관리
 
 ```
 jpm install colors     // 색상 출력
-jpm install strings    // 문자열 유틸
-jpm install lists      // 리스트 유틸
-jpm install mathx      // 수학 유틸
+jpm install strings    // 문자열 유틸리티
+jpm install lists      // 리스트 유틸리티
+jpm install mathx      // 수학 유틸리티
 ```
 
-## 베타 빌드 범위
+## 5. 베타 빌드 범위
 
-의존성 없는 기본 빌드. 어떤 PC에서나 바로 실행된다.
+본 배포본은 외부 의존성이 없는 기본 빌드이며, 별도 런타임 설치 없이 실행된다.
 
-- 언어 전체 기능: 변수, 함수, 클래스, 배열, 딕셔너리, 텐서, 파일/수학/문자열, f-string, 한글 이름
-- 패키지 매니저 `jpm`
-- 미포함(다음 빌드): Python 라이브러리 연동, AOT 네이티브 컴파일, GPU 가속
+- 포함: 언어 전체 기능(변수, 함수, 클래스, 배열, 딕셔너리, 텐서, 파일·수학·문자열 처리, 문자열 보간, 유니코드 식별자), 패키지 관리자 `jpm`
+- 미포함(후속 빌드 예정): Python 라이브러리 연동, AOT 네이티브 컴파일, GPU 가속
 
-버그와 건의는 [Issues](https://github.com/lenftk/dajulang-lang/issues) 로 받는다.
+결함 보고와 제안은 [Issues](https://github.com/lenftk/dajulang-lang/issues) 로 접수한다.
